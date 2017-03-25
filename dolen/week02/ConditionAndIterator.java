@@ -1,4 +1,4 @@
-package jsmine.task.week02;
+package jsmine.task.dolen.week02;
 
 /**
  * Created by imcts on 2017. 3. 25..
