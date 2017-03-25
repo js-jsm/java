@@ -142,7 +142,7 @@ public class ConditionAndIterator {
 
         for(int i = 0, len = input.length(), start = 0, end = len; i < len / 2; i++, start += 1, end -= 1) {
 
-            if(!input.substring(start, start + 1).equals(input.substring(end - 1, end))) {
+            if(input.charAt(start) != input.charAt(end - 1)) {
                 isPalindrome = false;
                 break;
             }
