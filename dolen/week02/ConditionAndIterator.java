@@ -139,12 +139,12 @@ public class ConditionAndIterator {
         boolean isPalindrome = true;
         input = "12321";
 
-        System.out.println(input.length() / 2);
 
         for(int i = 0, len = input.length(), start = 0, end = len; i < len / 2; i++, start += 1, end -= 1) {
 
             if(!input.substring(start, start + 1).equals(input.substring(end - 1, end))) {
                 isPalindrome = false;
+                break;
             }
 
         }
