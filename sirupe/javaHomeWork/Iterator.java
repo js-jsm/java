@@ -89,10 +89,10 @@ public class Iterator {
 		
 		//8. 주어진 문자열이 숫자인지 판별하는 프로그램을 작성하시오.
 		System.out.println("8. 주어진 문자열이 숫자인지 판별하는 프로그램을 작성하시오.");
-		String s = "12";
+		String s = "19z";
 		boolean b = true;
 		for(int i = 0, size = s.length(); i < size; i++) {
-			if((int)s.charAt(i) < 80 && (int)s.charAt(i) > 89) {
+			if((int)s.charAt(i) < 49 || (int)s.charAt(i) > 57) {
 				b = false;
 				break;
 			} 
@@ -120,6 +120,7 @@ public class Iterator {
 		}
 		System.out.println("\t총 " + count + " 회 만에 정답! > " + result);
 
+		
 		//10. 입력받은 수가 회문수가 맞는지를 검사하는 프로그램을 작성하시오.
 		// (회문수(palindrome)란 ? 앞으로 읽어도 뒤로 읽어도 같은 수. ex> 12321)
 		System.out.println("10. 입력받은 수가 회문수가 맞는지를 검사하는 프로그램을 작성하시오.");
