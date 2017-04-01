@@ -11,7 +11,7 @@ public class ConditionAndIterator {
         int count = 0;
 
         //      1. 1부터 20까지의 정수 중 2 또는 3의 배수가 아닌 수의 총합을 구하시오.
-        for(int i = 1; i < 21; i++) {
+        for(int i = 1; i < 21; i++) { // 1 -> 20    i % 2 != 0 && i % 3 != 0
             if (i % 2 != 0 && i % 3 != 0) {
                 sum += i;
             }
@@ -23,7 +23,7 @@ public class ConditionAndIterator {
         sum = 0;
 
         for(int i = 1; i < 11; i++) {
-            sum = i * (i + 1) / 2;
+            sum = i * (i + 1) / 2; //   n ( n + 1 ) / 2 == 1 ~ n 합
         }
 
         System.out.println("2. question = " + sum);
@@ -69,10 +69,10 @@ public class ConditionAndIterator {
         input = "12345";
 
         for(int i = 0, len = input.toCharArray().length; i < len; i++) {
-            result += input.toCharArray()[i];
+            result += input.charAt(i);
 
             if(i < len - 1) {
-                result += ",";
+                result += " + ";
             }
         }
 
@@ -102,11 +102,13 @@ public class ConditionAndIterator {
 
 //      8. 주어진 문자열이 숫자인지 판별하는 프로그램을 작성하시오.
         boolean isNumber = true;
+
         input = "3333a";
 
         for(char c : input.toCharArray()) {
-            if((int) c < 48 || (int) c > 57) {
+            if(c < 48 && c > 57) { // <<<<< 48: 0, 49: 1, 50: 2.... 57: 9 <<<<
                 isNumber = false;
+                break;
             }
         }
 
@@ -137,8 +139,7 @@ public class ConditionAndIterator {
 //      (회문수(palindrome)란 ? 앞으로 읽어도 뒤로 읽어도 같은 수. ex> 12321)
 
         boolean isPalindrome = true;
-        input = "12321";
-
+        input = "12321"; //5
 
         for(int i = 0, len = input.length(), start = 0, end = len; i < len / 2; i++, start += 1, end -= 1) {
 
