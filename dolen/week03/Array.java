@@ -231,11 +231,22 @@ public class Array {
         }
 
         //등수대로 출력 합니다.
+        for(int i = 0, r = 1, len = names.length; i < len; i++) {
 
-        for(int i = 0, len = names.length; i < len; i++) {
-            System.out.println(
-                names[i] + "\t" + sexs[i] + "\t" +  kors[i] + "\t" + engs[i] + "\t" + maths[i] + "\t" + sumArr[i] + "\t" + avg[i] + "\t" + rank[i]
-            );
+            for(int j = 0; j < len; j++) {
+
+                if(rank[j] == r) {
+                    System.out.println(
+                            names[j] + "\t" + sexs[j] + "\t" +  kors[j] + "\t" + engs[j] + "\t" + maths[j] + "\t" + sumArr[j] + "\t" + avg[j] + "\t" + rank[j]
+                    );
+
+                    r++;
+                    break;
+                }
+
+            }
+
+
         }
 
 
