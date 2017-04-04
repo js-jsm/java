@@ -1,4 +1,4 @@
-package CArray;
+package jaenam.week03;
 
 import java.util.Arrays;
 
