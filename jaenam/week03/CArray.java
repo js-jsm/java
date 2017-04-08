@@ -42,19 +42,20 @@ public class CArray {
 	
 	//	3. 배열을 사용하여 1 과 9 사이의 중복되지 않은 숫자로 이루어진 3자리 숫자를 만들어내는 프로그램을 작성하시오.
 	static int getRandom(int min, int max) {
-		return (int) (Math.random() * (max - min)) + min;
+		return (int)(Math.random() * (max - min + 1)) + min;
 	}
 	static void build3() {
-		int [] nums = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+		int [] nums = { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
 		int res = 0;
 		
 		for(int i = 0; i < 3; i++) {
-			int n = getRandom(0, 9);
-			if((i == 0 && n == 0) || nums[n] == -1) {
+			int n = getRandom(0, 8);
+			System.out.println(n);
+			if(nums[n] == 0) {
 				i -= 1;
 			} else {
-				nums[n] = -1;
-				res += n * Math.pow(10,  2 - i);
+				res += nums[n] * Math.pow(10, i);
+				nums[n] = 0;
 			}
 		}
 		System.out.println(res);
