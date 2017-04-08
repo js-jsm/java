@@ -49,14 +49,11 @@ public class CArray {
 		int res = 0;
 		
 		for(int i = 0; i < 3; i++) {
-			int n = getRandom(0, 8);
-			System.out.println(n);
-			if(nums[n] == 0) {
-				i -= 1;
-			} else {
-				res += nums[n] * Math.pow(10, i);
-				nums[n] = 0;
-			}
+			int randomIndex = getRandom(i, 8);
+			int tmp = nums[i];
+			nums[i] = nums[randomIndex];
+			nums[randomIndex] = tmp;
+			res += Math.pow(10,  i) * nums[i];
 		}
 		System.out.println(res);
 	}
