@@ -32,6 +32,7 @@ public class Array {
 		
 		//3. 배열을 사용하여 1 과 9 사이의 중복되지 않은 숫자로 이루어진 3자리 숫자를 만들어내는 프로그램을 작성하시오.
 		int [] arr3 = {1, 2, 3, 4, 5, 6, 7, 8, 9};
+		int [] arr33;
 		
 		for(int i=0; i<arr3.length; i++){
 			int first = arr3[i];
@@ -47,10 +48,12 @@ public class Array {
 					} else {
 						System.out.println(String.valueOf(first) + String.valueOf(second) + String.valueOf(third));
 					}
+
+
 				}
 			}
 		}
-		
+
 		//4. 금액 money 를 동전으로 변환할 때 각각 몇 개의 동전으로 변환이 가능한지 출력하라. (단, 동전의 갯수가 가장 작은 경우의 수를 구할 것.)
 		int money = 54320;
 		

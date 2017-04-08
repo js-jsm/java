@@ -9,7 +9,7 @@ public class Array {
         String str;
 
         //1. 배열 arr 에 담긴 모든 값을 더하는 프로그램을 완성하시오.
-        int [] intArr = { 1, 2, 3, 4, 5 };
+        int [] intArr = {1, 2, 3, 4, 5};
         sum = 0;
 
         for(int v : intArr)
@@ -25,28 +25,34 @@ public class Array {
         };
 
         sum = 0;
+        int cnt = 0;
 
         for(int [] questionInnerArr : question2) {
             for(int v : questionInnerArr) {
                 sum += v;
+                cnt ++;
             }
         }
 
-        System.out.println("2. question = " + sum);
+        System.out.println("2. question = " + sum + " : " + sum / cnt);
 
 
         //3. 배열을 사용하여 1 과 9 사이의 중복되지 않은 숫자로 이루어진 3자리 숫자를 만들어내는 프로그램을 작성하시오.
-        intArr = new int [] {1, 2, 3, 4, 5, 6, 7, 8, 9};
+        //Math.random() // 랜덤한 값을 리턴해요 0.238949328948
+        intArr = new int [] {1, 2, 3, 4, 5, 6, 7, 8, 9}; // 8 -> 0 ~ 7
+
+
         str = "";
 
-        for(int i = intArr.length, MAX_COUNT = 3, len = i - 3, random, temp; i > len; i--) {
-            random = (int) (Math.random() * 9);
+        //셔플 ! 섞는거 shuffle
+        for(int i = intArr.length, MAX_COUNT = 3, len = i - MAX_COUNT, random, temp; i > len; i--) {
+            random = (int) (Math.random() * 9); //
             temp = intArr[i - 1];
             intArr[i - 1] = intArr[random];
             intArr[random] = temp;
         }
 
-        for(int i = intArr.length, MAX_COUNT = 3, len = i - 3; i > len; i--) {
+        for(int i = intArr.length, MAX_COUNT = 3, len = i - MAX_COUNT; i > len; i--) {
             str += intArr[i - 1];
         }
 
@@ -55,17 +61,20 @@ public class Array {
 
         //4. 금액 money 를 동전으로 변환할 때 각각 몇 개의 동전으로 변환이 가능한지 출력하라. (단, 동전의 갯수가 가장 작은 경우의 수를 구할 것.)
         int money = 3050;
-        int cnt = 0;
+        int cnt1 = 0;
         int [] moneys = {500, 100, 50, 10};
         str = "";
 
-        for(int m : moneys) {
-            cnt = money / m;
-            str +=  m + "원" + cnt + "개 ";
-            money -= m * cnt;
+        for(int coin : moneys) {
+            cnt1 = money / coin;
+            str +=  coin + "원" + cnt1 + "개 ";
+            money -= coin * cnt1;
         }
 
-        System.out.println("4. question = " + str);
+        System.out.println("4. question = " + str); //500원 6개 100원 0개 50원 1개 10원 0개. 이걸 욕심쟁이 알고리즘.
+        //배낭 문제.
+        //물건의 무게가 15 5 30 20 / 30 50 20 30 / 40
+        // P / W == 선호도. 15 / 30
 
         //5. 배열 int [] answer = {1, 4, 4, 3, 5, 4, 2, 1};  의 데이터를 읽고 각 숫자의 갯수만큼 *을 출력하는 코드를 작성하시오.
         intArr = new int [] {1, 4, 4, 3, 5, 4, 2, 1};
@@ -83,12 +92,17 @@ public class Array {
         System.out.println("5. question = " + str);
 
 
-
         //6. 주어진 2차원 배열의 데이터보다 가로와 세로로 1이 더 큰 배열을 생성해서 배열의 행과 열의 마지막 요소에 각 열과 행의 총합을 저장하고 출력하는 프로그램을 작성하시오.
         //{100, 100, 100},
         //{ 20,  70,   80},
         //{ 40,  35,   70},
         //{ 50,  40,   30}
+
+        //{100, 100, 100, sum}, 결과화면
+        //{100, 100, 100, sum},
+        //{100, 100, 100, sum},
+        //{100, 100, 100, sum},
+        //{sum, sum, sum, sum}
 
         int [][] question6 = {
             {100, 100, 100},
@@ -200,21 +214,22 @@ public class Array {
                 70
         };
 
-        int [] avg = new int [names.length];
+        int [] avg = new int[names.length];
 
-        int [] sumArr = new int [names.length];
+        int [] sumArr = new int[names.length];
 
-        int [] rank = new int [names.length];
+        int [] rank = new int[names.length];
 
 
         System.out.println("이름\t성별\t국어\t영어\t수학\t총점\t평균\t등수");
-
 
         //평균을 구한다.
         for(int i = 0, len = names.length; i < len; i++) {
             sumArr[i] = kors[i] + engs[i] + maths[i];
             avg[i] = sumArr[i] / 3;
             rank[i] = 1;
+
+
         }
 
         //랭킹을 구해봅니다.
@@ -237,7 +252,7 @@ public class Array {
 
                 if(rank[j] == r) {
                     System.out.println(
-                            names[j] + "\t" + sexs[j] + "\t" +  kors[j] + "\t" + engs[j] + "\t" + maths[j] + "\t" + sumArr[j] + "\t" + avg[j] + "\t" + rank[j]
+                        names[j] + "\t" + sexs[j] + "\t" +  kors[j] + "\t" + engs[j] + "\t" + maths[j] + "\t" + sumArr[j] + "\t" + avg[j] + "\t" + rank[j]
                     );
 
                     r++;
