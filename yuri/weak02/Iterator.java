@@ -29,14 +29,14 @@ public class Iterator {
 			}
 		}
 		System.out.println("1. : " + value);
-		
+
 		//2.
 		int value2 = 0;
 		for(int i = 1; i <= 10; i++){
 			value2+=(value2 + i);
 		}
 		System.out.println("2. : " + value2);
-		
+
 		//3.
 		int value3 = 0;
 		for(int i = 1,result = 0; result < 100; i++, value3 = i){
@@ -47,7 +47,7 @@ public class Iterator {
 			}
 		}
 		System.out.println("3. : " + value3);
-		
+
 		//4.
 		for(int i = 1; i <= 6; i++){
 			for(int j = 1; j <= 6; j++){
@@ -63,53 +63,67 @@ public class Iterator {
 					System.out.println("5.문제 : " + " 2 * " + x + " + 4 * " + y + " = " + 2*(x + 2*y));
 				}
 			}
-		}	
+		}
 		//6.
 		int value6 = 0;
 		for(int i = 10, a = 12456; a > 0; a = a/i){
-			value6 += (a%i);			
+			value6 += (a%i);
 		}
 		System.out.println("6.문제 : " + value6);
-		
+
 		//7. 0 1 1 2 3 5 8 13 21 34 55 89
 		int value7 = 0;
 		for(int i = 0, j = 1, count = 1; count <= 10; count++ ){
 			value7 = i + j;
 			i = j;
-			j = value7;			
+			j = value7;
 		}
 		System.out.println("7.문제 : " + value7);
-		
+
 		//8.주어진 문자열이 숫자인지 판별하는 프로그램을 작성하시오.
-		
-		
+		String numberTxt = "123mrrkk";
+		System.out.println(numberTxt.length());
+		char [] arrNum = numberTxt.toCharArray();
+		String result2 = "숫자다";
+		for(char v : arrNum){
+			if(v < 48 || v > 57){
+				result2 = "숫자가 아니다";
+				break;
+			}
+		}
+		System.out.println("8.문제 : " + result2);
+
 		/*9. 숫자맞추기 게임
 		   1) 컴퓨터는 1부터 100까지의 수 중 임의의 수를 지정합니다.
 		   2) 사용자가 숫자를 입력 시 up, down 으로 지정된 수보다 큰지 작은지를 알려줍니다.
 		   3) 사용자가 숫자를 맞추면 컴퓨터는 몇 번 만에 숫자를 맞추었는지 출력합니다.*/
-		int computerNum = (int)(Math.random()*100);
-		int cnt = 1;		
-		
-		for(int input = 33, min = 0, max = 100, num2; input > min && input <= max; cnt++){
-			num2 = (int)(Math.random()*10);
+		int computerNum = (int)(Math.random()*100) + 1;
+		int resultCnt = 0;
+		System.out.println(computerNum);
+		for(int min = 0, max = 100, input = (int)(Math.random() * (max - min)) + min + 1, cnt = 0; input > min && input <= max;cnt++){
 			if(computerNum > input){
-				System.out.println("up");				
+				System.out.println("up");
 				min = input;
-				input = input + num2 > max ? input++ : input + num2;
+				input = (int)(Math.random() * (max - min)) + min + 1;
+				System.out.println(input);
 			}else if(computerNum < input){
 				System.out.println("down");
 				max = input;
-				input = input - num2 < min ? input-- : input - num2;
+				input = (int)(Math.random() * (max - min)) + min + 1;
+				System.out.println(input);
+			}else {
+				resultCnt = cnt;
+				break;
 			}
 		}
-		System.out.println("9.문제 : " + cnt);
+		System.out.println("9.문제 : " + resultCnt + "번");
 		
 		/*10. 입력받은 수가 회문수가 맞는지를 검사하는 프로그램을 작성하시오.
 		   (회문수(palindrome)란 ? 앞으로 읽어도 뒤로 읽어도 같은 수. ex> 12321)*/
 		int result = 0;
 		int input = 1456541;
 		for(int v = input; v > 0; v /= 10){
-			result = v%10 + result*10;	
+			result = v%10 + result*10;
 			System.out.println(result);
 		}
 		System.out.println("10.문제 : " + (input == result ? "회문수가 맞다" : "회문수가 아니다"));
