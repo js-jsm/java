@@ -1,7 +1,6 @@
-package homework;
+package jsmine.task.yuri.weak02;
 
-public class Operator {
-
+public class OperatorYuri {
 	public static void main(String [] args){
 		/*
 		 * 연산자 문제
@@ -15,7 +14,8 @@ public class Operator {
 		 */
 		//1.
 		int num = 33;
-		System.out.println(num > 0 ? "양" : num < 0 ? "음" : 0);
+
+		System.out.println(num > 0 ? "양" : num < 0 ? "음" : "0");
 		//2.
 		int num2 = 456;
 		System.out.println((int)(num2/100)*100);
