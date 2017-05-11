@@ -4,7 +4,7 @@ package jsmine.task.dolen.week04;
  * Created by imcts on 2017. 4. 2..
  */
 
-class Student {
+class Student { //구조체
     String name;
     String sex;
     int kor;
@@ -17,7 +17,7 @@ class Student {
 
 public class ArrayStudent {
     public static void main(String[] args) {
-        Student [] students = new Student [5];
+        Student [] students = new Student[5]; //  학생 5명을 넣을 공간을 선언하고 = 그 공간을 할당함;
 
         String [] names = {
                 "A",
@@ -69,6 +69,7 @@ public class ArrayStudent {
             student.sum = student.kor + student.eng + student.math;
             student.avg = student.sum / 3;
             student.rank = 1;
+
             students[i] = student;
         }
 
