@@ -9,7 +9,7 @@ public class Operator {
         int input = 3333;
 
 //      1. 입력받은 수에 따라 '양수', '음수', '0' 을 출력하는 코드를 삼항연산자를 이용하여 작성하시오.
-        System.out.println(input < 0 ? "음수" : input == 0 ? 0 : "양수");
+        System.out.println(input < 0 ? "음수" : input == 0 ? "0" : "양수");
 
 //      2. 입력받은 수의 백의 자리 이하를 버리는 코드를 작성하시오. (ex> 456 입력시 400 출력)
         System.out.println(input / 100 * 100); // 3333

@@ -1,6 +1,6 @@
 package homework;
 
-public class Variable {
+public class VariableYuri {
 
 	public static void main(String [] args) {
 		int personalNumber = 870203-2560211;

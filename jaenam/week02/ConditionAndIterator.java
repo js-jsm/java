@@ -2,7 +2,7 @@ package jaenam.week02;
 /*
 조건문과 반복문 문제
  */
-public class Condition {
+public class ConditionAndIterator {
 	public static void main(String[] args) {
 		System.out.println(a1());
 		System.out.println(a2());
