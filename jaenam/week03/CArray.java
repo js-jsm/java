@@ -66,7 +66,7 @@ public class CArray {
 		String res = "";
 		
 		for(int i = 0; i < 4; i++) {
-			arr[i] = (int) m / coin[i];
+			arr[i] = m / coin[i];
 			m -= arr[i] * coin[i];
 			res += coin[i] + "원 : " + arr[i] + "개\n";
 		}

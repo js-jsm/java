@@ -18,10 +18,10 @@ public class OperatorYuri {
 		System.out.println(num > 0 ? "양" : num < 0 ? "음" : "0");
 		//2.
 		int num2 = 456;
-		System.out.println((int)(num2/100)*100);
+		System.out.println(num2/100 *100);
 		//3.
 		int num3 = 777;
-		System.out.println((int)(num3/10)*10 + 1);
+		System.out.println(num3/10 *10 + 1);
 		//4.
 		int num4 = 50;
 		//5.
